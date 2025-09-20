@@ -8,12 +8,17 @@
 # testing
 /coverage
 
+<<<<<<< HEAD
 # production
 /build
 
 # misc
 .DS_Store
 .env
+=======
+# misc
+.DS_Store
+>>>>>>> 50ebda02758416d4065b362eb43ecb100c7f00bf
 .env.local
 .env.development.local
 .env.test.local

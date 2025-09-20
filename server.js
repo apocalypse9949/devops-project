@@ -24,6 +24,26 @@ const connectDB = async () => {
 };
 
 //middlewares
+// ...existing code...
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://devops-project-iota.vercel.app',
+  'https://codelance-akshat.netlify.app'
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps, curl, etc.)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
+// ...existing code...
 // app.use(cors({
 //   origin: [
 //     'http://localhost:3000',
@@ -33,10 +53,10 @@ const connectDB = async () => {
 //   credentials: true
 // }));
 // ...existing code...
-app.use(cors({
-  origin: true,
-  credentials: true
-}));
+// app.use(cors({
+//   origin: true,
+//   credentials: true
+// }));
 // ...existing code...
 // app.use(cors({
 //   origin: 'http://localhost:3000',

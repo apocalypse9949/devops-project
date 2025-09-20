@@ -24,14 +24,20 @@ const connectDB = async () => {
 };
 
 //middlewares
+// app.use(cors({
+//   origin: [
+//     'http://localhost:3000',
+//     'https://devops-project-iota.vercel.app',
+//     'https://codelance-akshat.netlify.app'
+//   ],
+//   credentials: true
+// }));
+// ...existing code...
 app.use(cors({
-  origin: [
-    'http://localhost:3000',
-    'https://devops-project-iota.vercel.app',
-    'https://codelance-akshat.netlify.app'
-  ],
+  origin: true,
   credentials: true
 }));
+// ...existing code...
 // app.use(cors({
 //   origin: 'http://localhost:3000',
 //   credentials: true

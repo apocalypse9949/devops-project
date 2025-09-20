@@ -27,8 +27,8 @@ const connectDB = async () => {
 // ...existing code...
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://devops-project-iota.vercel.app',
-  'https://codelance-akshat.netlify.app'
+  'https://devops-project-iota.vercel.app'
+  
 ];
 
 app.use(cors({
